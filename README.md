@@ -5,7 +5,7 @@ To use:
 
 1. Clone/download all the files to a folder.
 2. Download and install [AutoHotkey](https://www.autohotkey.com/)
-3. Double-click EmacsEverwhere.ahk to launch.
+3. Double-click EmacsEverywhere.ahk to launch.
 4. Ctrl+Alt+Enter toggles whether Emacs mode is active.
 
 ```
@@ -36,6 +36,7 @@ C-o Open line above cursor
 C-w Delete selection
 C-S-f Send Ctrl-f (e.g., to trigger a 'Find' dialog)
 C-u Universal arg - increase numeric prefix by multiples of 4 (for repeating movement/deletion commands)
+C-M-F12 Reloads the script after making edits
 ```
 
 More extensive key bindings are available for certain programs, such as Visual Studio and the Outlook email editor.
