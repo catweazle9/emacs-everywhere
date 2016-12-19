@@ -39,4 +39,18 @@ C-u Universal arg - increase numeric prefix by multiples of 4 (for repeating mov
 C-M-F12 Reloads the script after making edits
 ```
 
-More extensive key bindings are available for certain programs, such as Visual Studio and the Outlook email editor.
+Basic Emacs key bindings are supported for the following programs:
+
+- Notepad
+- FreeCommander XE
+- Cmd and PowerShell
+- P4V
+- Firefox address bar
+- Office Communicator / Skype
+- MusicBee
+- Visual Studio and R#
+- PyCharm
+- Outlook email editor
+- Word dialogs (Emacs key bindings for Word are available through [VBacs](http://www.rath.ca/Misc/VBacs/)
+
+It should be fairly straightforward to add support to other programs. Feel free to contribute.
