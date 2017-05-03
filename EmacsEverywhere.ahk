@@ -98,7 +98,25 @@ SendCommand(k1, k2="", k3="", k4="", k5="", k6="") {
       Send, %k6%
     }
   } else {
-    Send, %A_ThisHotkey% ; Pass through original keystroke
+  ; Pass through the original keystroke.
+  ; This requires parsing A_ThisHotkey to determine the modifiers to specify for the Send command.
+  ; Originally just had: Send, %A_ThisHotkey%
+  ; .. but this caused the string "Delete" to be sent when pressing the Delete key.
+  ;
+  ; Code taken from https://autohotkey.com/boards/viewtopic.php?f=5&t=25643
+  ; Alternative approach: Laszlo's reply at https://autohotkey.com/board/topic/9223-the-shortest-way-to-send-a-thishotkey/
+    FoundPos := RegExMatch(A_ThisHotkey, "O)([\^!#+]+)(.*)", m)
+    if (FoundPos = 0) 
+    {
+      Modifiers =
+      Key = %A_ThisHotkey%
+    } else {
+      Modifiers := m[1]
+      Key := m[2]
+
+    }
+    ; MsgBox, % Modifiers "`n" Key
+    Send, % Modifiers "{" Key "}"
   }
   NumericPrefix = 1
   CtrlXPrefix = 0
@@ -383,7 +401,7 @@ Space::SendCommand("+{Space}")
 
 ; PowerShell ISE
 #IfWinActive, ahk_group PoSH
-^u::SendCommand("^+{Home}","{Del}")
+;^u::SendCommand("^+{Home}","{Del}")
 ^+d::SendCommand("^d")
 ^+s::SendCommand("^i")
 #IfWinActive ; End of cmd and PowerShell ISE bindings
