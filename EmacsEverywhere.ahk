@@ -47,6 +47,8 @@ GroupAdd, EmacsApps, ahk_class LyncConversationWindowClass ; Office Communicator
 GroupAdd, EmacsApps, ahk_class Transparent Windows Client
 GroupAdd, EmacsApps, ahk_group PoSH
 GroupAdd, EmacsApps, ahk_class IEFrame
+GroupAdd, EmacsApps, ahk_class Chrome_WidgetWin_1
+GroupAdd, EmacsApps, ahk_class Wox
 GroupAdd, EmacsApps, - Microsoft Visual Studio
 GroupAdd, EmacsApps, JetPopupMenuView ; ReSharper popups
 GroupAdd, EmacsApps, Rename ; ReSharper Rename dialog
